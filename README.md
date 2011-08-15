@@ -49,11 +49,11 @@ and transparency. The flow is as follows:
 3.  Within Zendesk, visit Manage->Ticket Fields, select "Text" field, name it, and save it;
 4.  Edit the field and note the Custom field ID on the right side of the screen;
 5.  Within Zendesk, visit Settings->Extensions->Targets and click "add target":
-5.1.  Give the Target a useful name such as "Twilio Notification";
-5.2.  Use your Twilio Account SID & Phone Number with your Zendesk Custom field ID to fill in the AC1234, NNNN, and CCCC fields respectively in this URL: https://api.twilio.com/2010-04-01/Accounts/AC1234/SMS/Messages?From=+NNNN&To={{ticket.ticket_field_CCCC}}&Body={{ticket.latest_public_comment}}
-5.3.  Enter the completed URL in the URL box;
-5.4.  Enter your Account SID and Auth Token in the Username and Password fields;
-5.5.  Click save;
+ *  Give the Target a useful name such as "Twilio Notification";
+ *  Use your Twilio Account SID & Phone Number with your Zendesk Custom field ID to fill in the AC1234, NNNN, and CCCC fields respectively in this URL: https://api.twilio.com/2010-04-01/Accounts/AC1234/SMS/Messages?From=+NNNN&To={{ticket.ticket_field_CCCC}}&Body={{ticket.latest_public_comment}}
+ *  Enter the completed URL in the URL box;
+ *  Enter your Account SID and Auth Token in the Username and Password fields;
+ *  Click save;
 6.  Edit inbound.php filling in your Zendesk site, username, password, and the Custom field ID noted as CCCC above;
 7.  If you want all tickets to come in as a specific user, you can set the PLACEHOLDER constant also;
 8.  Upload the inbound.php file to your server, to get a URL such as http://example.org/inbound.php;
