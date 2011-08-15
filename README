@@ -51,10 +51,6 @@ Configuration
 
 #  Create a Twilio account;
 #  Create a Zendesk account;
-#  Upload the inbound.php file to your server, to get a URL such as
-http://example.org/inbound.php;
-#  Within Twilio, update the SMS URL for one of your phone numbers to point at
-the above URL;
 #  Within Zendesk, visit Manage->Ticket Fields, select "Text" field, name it,
 and save it;
 #  Edit the field and note the Custom field ID on the right side of the screen;
@@ -67,6 +63,14 @@ https://api.twilio.com/2010-04-01/Accounts/AC1234/SMS/Messages?From=+NNNN
 ##  Enter the completed URL in the URL box;
 ##  Enter your Account SID and Auth Token in the Username and Password fields;
 ##  Click save;
+#  Edit inbound.php filling in your Zendesk site, username, password, and the
+Custom field ID noted as CCCC above;
+#  If you want all tickets to come in as a specific user, you can set the
+PLACEHOLDER constant also;
+#  Upload the inbound.php file to your server, to get a URL such as
+http://example.org/inbound.php;
+#  Within Twilio, update the SMS URL for one of your phone numbers to point at
+the above URL;
 #  Within Zendesk, visit Manage->Triggers & mail notifications and click "add trigger":
 ##  Edit "Notify requestor of comment update" and change the "Perform these
 actions" dropdown to the Target name specified above.
