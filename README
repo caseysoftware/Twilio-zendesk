@@ -1,0 +1,37 @@
+
+Twilio / Zendesk Integration Example
+
+Background
+---------
+
+Zendesk is a Helpdesk system for receiving and responding to trouble tickets,
+support requests, etc. Each customer service people can jump into particlar
+tickets/threads as they need. All exchanges are via email.
+
+In this scenario, I plug into Twilio to allow SMS to replace email completely
+and transparency. The flow is as follows:
+
+*  A customer sends an SMS to a short/long code requesting support;
+*  This script receives the incoming SMS and checks for an open ticket from
+this phone number:
+**  If there is not a match, a new ticket is created using the body of the SMS
+and attaching the phone number as an attribute;
+**  If there is a match, the SMS is appended to the existing ticket;
+*  When a customer service representative responds to the ticket, an SMS is
+sent back out through Twilio to the original requestor.
+
+Dependencies
+---------
+
+This example code is based on two independent libraries which are included here
+for completeness, not because there's any implied ownership, endorsement, etc.
+
+Brian Hartvigsen's  Zendesk PHP Library:
+http://code.google.com/p/zendesk-php-lib/ - r25 specifically
+
+The official Twilio PHP Library:
+https://github.com/twilio/twilio-php/ - v2.0.8 specifically
+
+
+Areas for Improvement
+---------
