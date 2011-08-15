@@ -37,8 +37,8 @@ and transparency. The flow is as follows:
 
  *  A customer sends an SMS to a short/long code requesting support;
  *  This script receives the incoming SMS and checks for an open ticket from this phone number:
- **  If there is not a match, a new ticket is created using the body of the SMS and attaching the phone number as an attribute;
- **  If there is a match, the SMS is appended to the existing ticket;
+    *  If there is not a match, a new ticket is created using the body of the SMS and attaching the phone number as an attribute;
+    *  If there is a match, the SMS is appended to the existing ticket;
  *  When a customer service representative responds to the ticket, an SMS is sent back out through Twilio to the original requestor;
  *  Goto 1.
 
