@@ -12,9 +12,6 @@
  *
  */
  
- ini_set('display_errors', 1);
-error_reporting(E_ALL ^ E_NOTICE);
-
 include "vendor/autoload.php";
 
 use Zendesk\API\Client as ZendeskAPI;
@@ -27,10 +24,6 @@ function getZendeskClient()
     $ZD_USERNAME = getenv('ZD_USERNAME');
     $ZD_APITOKEN = getenv('ZD_APITOKEN');
 
-	echo $ZD_SUBDOMAIN;
-	echo $ZD_USERNAME;
-	echo $ZD_APITOKEN;
-	
     $client = new ZendeskAPI($ZD_SUBDOMAIN, $ZD_USERNAME);
     $client->setAuth('token', $ZD_APITOKEN);
 
@@ -62,11 +55,8 @@ if (isset($_REQUEST)) {
         );
     } else if ( $command == "new" ) {
 
-	echo $ZD_FIELD;
-	
         $client = getZendeskClient();
 		
-		try {
         $result = $client->tickets()->create(
             array ('description' => $remainder,
                 'subject' => substr($remainder, 0, 80), 
@@ -77,11 +67,6 @@ if (isset($_REQUEST)) {
                 )
             )
         );
-		} catch (Exception $e) {
-        
-        echo $client->getDebug()->lastResponseCode;
-		echo $client->getDebug()->lastResponseHeaders;
-        }
 		
         $response->message(
             "A new ticket has been created.  To update, " .
