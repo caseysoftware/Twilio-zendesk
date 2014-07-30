@@ -78,7 +78,7 @@ if (isset($_REQUEST)) {
             
             $result = $client->tickets()->find(array('id'=>$command));
             $ticket = $result->ticket;
-            $ticket_id = (string) $ticket->id;
+            $ticket_id = $ticket->id;
 
             $client->ticket($ticket_id)->update(
                 array('comment' => array(
