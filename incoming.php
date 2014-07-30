@@ -11,6 +11,10 @@
  * @link     http://twilio.com
  *
  */
+ 
+ ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
+
 include "vendor/autoload.php";
 
 use Zendesk\API\Client as ZendeskAPI;
