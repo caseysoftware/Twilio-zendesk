@@ -84,7 +84,7 @@ if (isset($_REQUEST)) {
                 array('comment' => array(
                         'public' => true,
                         'body' => $remainder
-                        )
+                    )
                 )
             );
                 
