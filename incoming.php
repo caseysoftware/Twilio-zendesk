@@ -62,7 +62,11 @@ if (isset($_REQUEST)) {
         );
     } else if ( $command == "new" ) {
 
+	echo $ZD_FIELD;
+	
         $client = getZendeskClient();
+		
+		try {
         $result = $client->tickets()->create(
             array ('description' => $remainder,
                 'subject' => substr($remainder, 0, 80), 
@@ -73,10 +77,12 @@ if (isset($_REQUEST)) {
                 )
             )
         );
+		} catch (Exception $e) {
         
         echo $client->getDebug()->lastResponseCode;
 		echo $client->getDebug()->lastResponseHeaders;
-        
+        }
+		
         $response->message(
             "A new ticket has been created.  To update, " .
             "reply with the command '" . $result->ticket->id . " [message]'"
