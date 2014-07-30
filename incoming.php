@@ -70,6 +70,8 @@ if (isset($_REQUEST)) {
             )
         );
         
+        echo $client->getDebug()
+        
         $response->message(
             "A new ticket has been created.  To update, " .
             "reply with the command '" . $result->ticket->id . " [message]'"
