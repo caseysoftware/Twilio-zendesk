@@ -48,7 +48,7 @@ if (isset($_REQUEST)) {
 
     if ( $command == "menu" ) {
         $response->message(
-            "The available commands are:\r\new - create a new ticket\r\n" .
+            "The available commands are:\r\nnew - create a new ticket\r\n" .
             "[id] - update this ticket ID\r\n" .
             "menu - show this menu"
         );
