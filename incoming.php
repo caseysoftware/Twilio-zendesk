@@ -11,6 +11,10 @@
  * @link     http://twilio.com
  *
  */
+ 
+ ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
+
 include "vendor/autoload.php";
 
 use Zendesk\API\Client as ZendeskAPI;
@@ -48,7 +52,7 @@ if (isset($_REQUEST)) {
 
     if ( $command == "menu" ) {
         $response->message(
-            "The available commands are:\r\new - create a new ticket\r\n" .
+            "The available commands are:\r\nnew - create a new ticket\r\n" .
             "[id] - update this ticket ID\r\n" .
             "menu - show this menu"
         );
@@ -66,6 +70,8 @@ if (isset($_REQUEST)) {
             )
         );
         
+        echo $client->getDebug()
+        
         $response->message(
             "A new ticket has been created.  To update, " .
             "reply with the command '" . $result->ticket->id . " [message]'"
@@ -78,7 +84,7 @@ if (isset($_REQUEST)) {
             
             $result = $client->tickets()->find(array('id'=>$command));
             $ticket = $result->ticket;
-            $ticket_id = (string) $ticket->id;
+            $ticket_id = $ticket->id;
 
             $client->ticket($ticket_id)->update(
                 array('comment' => array(
