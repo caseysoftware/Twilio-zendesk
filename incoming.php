@@ -70,7 +70,7 @@ if (isset($_REQUEST)) {
             )
         );
         
-        echo $client->getDebug()
+        print_r($client->getDebug());
         
         $response->message(
             "A new ticket has been created.  To update, " .
