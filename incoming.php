@@ -27,6 +27,10 @@ function getZendeskClient()
     $ZD_USERNAME = getenv('ZD_USERNAME');
     $ZD_APITOKEN = getenv('ZD_APITOKEN');
 
+	echo $ZD_SUBDOMAIN;
+	echo $ZD_USERNAME;
+	echo $ZD_APITOKEN;
+	
     $client = new ZendeskAPI($ZD_SUBDOMAIN, $ZD_USERNAME);
     $client->setAuth('token', $ZD_APITOKEN);
 
