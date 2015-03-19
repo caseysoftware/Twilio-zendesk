@@ -83,5 +83,3 @@ probably more complicated than it needs to be;
  *  Use more of the incoming Twilio information to create a better customer
 profile;
  *  Add a hook to allow for customer information lookup from third party systems;
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/578774a35649c9e9248f70684fbc3192 "githalytics.com")](http://githalytics.com/caseysoftware/Twilio-zendesk)
