@@ -1,0 +1,16 @@
+{
+	"name": "twilio/twilio-zendesk",
+    "description": "This sample demonstrates a simple Twilio SMS based ticket workflow for Zendesk",
+    "keywords": [ "php", "twilio", "zendesk", "sms" ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Devin Rader",
+            "email": "devin@twilio.com"
+        }
+    ],
+	"require": {
+		"zendesk/zendesk_api_client_php": "dev-master",
+		"twilio/sdk": "dev-master"
+	}
+}
