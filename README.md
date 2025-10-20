@@ -33,7 +33,7 @@ support requests, etc. Each customer service people can jump into particlar
 tickets/threads as they need. All exchanges are via email.
 
 In this scenario, I plug into Twilio to allow SMS to replace email completely
-and transparency. The flow is as follows:
+and transparently. The flow is as follows:
 
  *  A customer sends an SMS to a short/long code requesting support;
  *  This script receives the incoming SMS and checks for an open ticket from this phone number:
